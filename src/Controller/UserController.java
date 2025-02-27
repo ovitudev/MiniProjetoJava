@@ -1,4 +1,5 @@
-package Model;
+package Controller;
 
 public class UserController {
+
 }
