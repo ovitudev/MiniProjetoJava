@@ -2,7 +2,7 @@ package Model;
 
 public class UserModel {
     private String name;
-    private int accessLevel;
+    private final int accessLevel;
 
     public UserModel(String name, int accessLevel) {
         this.name = name;
