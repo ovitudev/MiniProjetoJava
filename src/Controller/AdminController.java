@@ -1,31 +1,24 @@
 package Controller;
 
 import Model.AdminModel;
-import View.AdminView;
+
+import java.util.List;
 
 public class AdminController {
     private AdminModel adminModel;
-    private AdminView  adminView ;
 
-    public AdminController(AdminModel adminModel, AdminView adminView) {
-        this.adminModel = adminModel;
-        this.adminView = adminView;
+    List<AdminModel> adminModelList;
+
+    public AdminController(List<AdminModel> adminModelList) {
+        this.adminModelList = adminModelList;
     }
 
-    public AdminModel getAdminModel() {
-        return adminModel;
+    public void registrationAdmin(String name, String cpf, String email, int id, int accessLevel){
+        AdminModel adminModel = new AdminModel(name, cpf, email, id, accessLevel);
+        adminModelList.add(adminModel);
     }
 
-    public void setAdminModel(AdminModel adminModel) {
-        this.adminModel = adminModel;
+    public List<AdminModel> showAdministrators(){
+        return adminModelList;
     }
-
-    public AdminView getAdminView() {
-        return adminView;
-    }
-
-    public void setAdminView(AdminView adminView) {
-        this.adminView = adminView;
-    }
-
 }
