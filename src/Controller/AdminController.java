@@ -5,8 +5,6 @@ import Model.AdminModel;
 import java.util.List;
 
 public class AdminController {
-    private AdminModel adminModel;
-
     List<AdminModel> adminModelList;
 
     public AdminController(List<AdminModel> adminModelList) {

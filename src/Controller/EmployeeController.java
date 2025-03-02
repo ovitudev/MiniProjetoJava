@@ -5,7 +5,7 @@ import Model.EmployeeModel;
 import java.util.List;
 
 public class EmployeeController {
-    private EmployeeModel employeeModel;
+
     List<EmployeeModel> employeeModelList;
 
     public EmployeeController(List<EmployeeModel> employeeModelList){
