@@ -25,8 +25,7 @@ public class MainMenu {
 
         System.out.println("""
                 1 - Registration Visitor
-                2 - Registration Visitors
-                3 - Show Visitors
+                2 - Show Visitors
                 0 - Exit
                 """);
     }
@@ -39,5 +38,23 @@ public class MainMenu {
                 2 - Rooms
                 0 - Exit
                 """);
+    }
+
+
+    public void menuRegistration(){
+        System.out.println("""
+                Which do you want to register? Administrator or Employee
+                
+                1-Administrator
+                2-Employee
+                3-Back
+                4-Exit
+              
+                
+                """);
+
+
+
+
     }
 }

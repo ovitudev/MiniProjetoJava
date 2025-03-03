@@ -69,7 +69,7 @@ public class VisitorView {
         if (visitorController.showVisitors().isEmpty()) {
             System.out.println("Error: no registration found!");
         } else {
-            System.out.println("List of Admin:");
+            System.out.println(" list of  Visitors:");
             visitorController.showVisitors().forEach(visitors ->
                     System.out.println(visitors)
             );
