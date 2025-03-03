@@ -3,7 +3,6 @@ package View;
 public class MainMenu {
 
     public void menuLogin() {
-
         System.out.print("""
                 1 - Sign up
                 2 - Login
@@ -22,7 +21,6 @@ public class MainMenu {
     }
 
     public void menuEmployee() {
-
         System.out.println("""
                 1 - Registration Visitor
                 2 - Show Visitors
@@ -40,21 +38,14 @@ public class MainMenu {
                 """);
     }
 
-
-    public void menuRegistration(){
+    public void menuRegistration() {
         System.out.println("""
                 Which do you want to register? Administrator or Employee
                 
-                1-Administrator
-                2-Employee
-                3-Back
-                4-Exit
-              
-                
+                1 - Administrator
+                2 - Employee
+                3 - Back
+                0 - Exit
                 """);
-
-
-
-
     }
 }

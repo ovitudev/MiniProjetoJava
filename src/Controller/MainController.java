@@ -16,12 +16,12 @@ public class MainController {
     static Scanner sc = new Scanner(System.in);
 
     public void mainController() {
-
+        // Declaração de Listas
         List<AdminModel> adminModelList = new ArrayList<>();
         List<VisitorModel> visitorModelList = new ArrayList<>();
         List<EmployeeModel> employeeModelList = new ArrayList<>();
 
-
+        // Instância das classes
         AdminController adminController = new AdminController(adminModelList);
         AdminView adminView = new AdminView();
         VisitorController visitorController = new VisitorController(visitorModelList);
@@ -31,37 +31,30 @@ public class MainController {
         MainMenu mainMenu = new MainMenu();
 
         boolean set = true;
-
         while (set) {
             mainMenu.menuLogin();
             String choice = sc.nextLine();
             switch (choice) {
-
                 case "1":
                     boolean setRegistration = true;
-                    while (setRegistration){
-                    mainMenu.menuRegistration();
-                    String choiceRegistration = sc.nextLine();
-                    switch (choiceRegistration){
-                        case "1":
-                            adminView.registrationAdmin(adminController, adminModelList);
-                            break;
-
-                        case "2":
-                            employeeView.registrationEmployee(employeeController, employeeModelList);
+                    while (setRegistration) {
+                        mainMenu.menuRegistration();
+                        String choiceRegistration = sc.nextLine();
+                        switch (choiceRegistration) {
+                            case "1":
+                                adminView.registrationAdmin(adminController, adminModelList);
                                 break;
-
-                        case "3":
+                            case "2":
+                                employeeView.registrationEmployee(employeeController, employeeModelList);
+                                break;
+                            case "3":
                                 setRegistration = false;
                                 break;
-
-                        case "4":
-
-                            setRegistration = false;
-                            set = false;
-                            break;
-                    }
-
+                            case "0":
+                                setRegistration = false;
+                                set = false;
+                                break;
+                        }
                     }
                     break;
 
@@ -76,8 +69,8 @@ public class MainController {
 
                     boolean isAdmin = false;
                     for (AdminModel adminModel : adminModelList) {
-                        if (adminModel.getCpf().equals(cpf) && adminModel.getId() == id) {
-                            isAdmin = true;
+                        if (adminModel.getCpf().equals(cpf) && adminModel.getId() == id) { // Verifico se os dados preenchidos são referentes a lista do Admin
+                            isAdmin = true; // Caso seja, irá retornar TRUE e prosseguir com esse if
                             System.out.println("Admin login successful!\n\n");
 
                             boolean set2 = true;
@@ -102,7 +95,7 @@ public class MainController {
                                         set2 = false;
                                         break;
                                     default:
-                                        break;
+                                        break; // Uma simples verificação de case, caso não seja não irá interferir ou quebrar o código
                                 }
                             }
                             break;
@@ -114,8 +107,8 @@ public class MainController {
                     boolean isEmployee = false;
                     if (!isAdmin) {
                         for (EmployeeModel employeeModel : employeeModelList) {
-                            if (employeeModel.getCpf().equals(cpf) && employeeModel.getId() == id) {
-                                isEmployee = true;
+                            if (employeeModel.getCpf().equals(cpf) && employeeModel.getId() == id) { // Verifico se os dados preenchidos são referentes a lista do Employee
+                                isEmployee = true; // Caso seja, irá retornar TRUE e prosseguir com esse if
                                 System.out.println("Employee login successful!\n\n");
 
                                 boolean set3 = true;
@@ -137,10 +130,8 @@ public class MainController {
                                         default:
                                             break;
                                     }
-
                                 }
                                 break;
-
                             }
 
                         }
@@ -150,8 +141,8 @@ public class MainController {
                     boolean isVisitor = false;
                     if (!isAdmin && !isEmployee) {
                         for (VisitorModel visitorModel : visitorModelList) {
-                            if (visitorModel.getCpf().equals(cpf) && visitorModel.getId() == id) {
-                                isVisitor = true;
+                            if (visitorModel.getCpf().equals(cpf) && visitorModel.getId() == id) { // Verifico se os dados preenchidos são referentes a lista do Visitor
+                                isVisitor = true; // Caso seja, irá retornar TRUE e prosseguir com esse if
                                 System.out.println("Visitor login successful!\n\n");
 
                                 boolean set4 = true;
@@ -191,8 +182,6 @@ public class MainController {
                     break;
                 default:
                     break;
-
-
             }
         }
         adminView.showAdministrators(adminController);
