@@ -21,7 +21,7 @@ public class MainMenu {
     }
 
     public void menuEmployee() {
-        System.out.println("""
+        System.out.print("""
                 1 - Registration Visitor
                 2 - Show Visitors
                 0 - Exit
@@ -39,13 +39,12 @@ public class MainMenu {
     }
 
     public void menuRegistration() {
-        System.out.println("""
-                Which do you want to register? Administrator or Employee
+        System.out.print("""
+                Which do you want to register? (Administrator or Employee)
                 
                 1 - Administrator
                 2 - Employee
-                3 - Back
-                0 - Exit
+                0 - Back
                 """);
     }
 }

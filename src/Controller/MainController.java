@@ -47,17 +47,14 @@ public class MainController {
                             case "2":
                                 employeeView.registrationEmployee(employeeController, employeeModelList);
                                 break;
-                            case "3":
-                                setRegistration = false;
-                                break;
                             case "0":
                                 setRegistration = false;
-                                set = false;
                                 break;
+                            default:
+                                break; // Uma simples verificação de case, caso não seja não irá interferir ou quebrar o código
                         }
                     }
                     break;
-
 
                 case "2":
                     System.out.print("Enter your CPF: ");
@@ -99,7 +96,6 @@ public class MainController {
                                 }
                             }
                             break;
-
                         }
 
                     }
@@ -112,7 +108,6 @@ public class MainController {
                                 System.out.println("Employee login successful!\n\n");
 
                                 boolean set3 = true;
-
                                 while (set3) {
                                     mainMenu.menuEmployee();
 
@@ -133,9 +128,7 @@ public class MainController {
                                 }
                                 break;
                             }
-
                         }
-
                     }
 
                     boolean isVisitor = false;
@@ -184,6 +177,5 @@ public class MainController {
                     break;
             }
         }
-        adminView.showAdministrators(adminController);
     }
 }
